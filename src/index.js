@@ -7,8 +7,8 @@ module.exports = class W5MFTypesGeneratePlugin {
 
   apply(compiler) {
     const PUBLIC_DIR = this.options?.publicDir || (process.env.NODE_ENV === 'production' ? 'build' : 'public');
-    const TYPES_DIR = this.options?.typesDir || 'types';
-    const ARCHIVE_FILE = this.options?.archiveFile || 'types.tar';
+    const TYPES_DIR = this.options?.typesDir || 'w5mf-types';
+    const ARCHIVE_FILE = this.options?.archiveFile || 'w5mf-types.tar';
 
     compiler.hooks.assetEmitted.tap("W5MFTypesGenerate", async (compilation) => {
       await tar.create({ gzip: false, file: `${PUBLIC_DIR}/${ARCHIVE_FILE}` }, [TYPES_DIR]);
