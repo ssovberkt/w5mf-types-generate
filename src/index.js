@@ -11,7 +11,7 @@ module.exports = class W5MFTypesGeneratePlugin {
     const APP_NAME = this.options?.appName;
 
     if (!APP_NAME) {
-      throw new Error('[W5MF-TYPES-GENERATE] App name option is required');
+      throw new Error('[W5MF-TYPES-GENERATE] Option "appName" is required');
     }
 
     const ROOT_DIR = process.cwd();
@@ -22,7 +22,7 @@ module.exports = class W5MFTypesGeneratePlugin {
     compiler.hooks.assetEmitted.tap("W5MFTypesGenerate", async (compilation) => {
       fs.stat(TYPES_DIR, async (error) => {
         if (error) {
-          throw new Error(`[W5MF-TYPES-GENERATE] Not '${TYPES_DIR}' dir`);
+          throw new Error(`[W5MF-TYPES-GENERATE] Not "${TYPES_DIR}" dir`);
         }
 
         process.chdir(TYPES_DIR);

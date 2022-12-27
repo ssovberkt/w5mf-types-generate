@@ -1,6 +1,6 @@
 {
   "name": "w5mf-types-generate",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "For Webpack Module Federation Plugins: Working typescript: Generate types",
   "main": "src/index.js",
   "repository": {
